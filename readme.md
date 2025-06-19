@@ -7,10 +7,10 @@ Este proyecto utiliza **Programación Lineal Entera Mixta (MILP)** para asignar 
 ## 1. Clonar el proyecto de github
 - git clone (link)
 
-## 2. Crear un entorno virtual
+## 2. Crear un entorno virtual (opcional)
 - python -m venv venv
 
-## 3. Activar el entorno virtual
+## 3. Activar el entorno virtual (opcional)
 - venv\Scripts\activate
 
 ## 4. Instalar dependencias
@@ -19,7 +19,7 @@ Este proyecto utiliza **Programación Lineal Entera Mixta (MILP)** para asignar 
 ## 5. Crear la base de datos
 - python crear_base.py
 
-## 6. Ejecuta la aplicacion
+## 6. Ejecuta la aplicacion (te pedira un correo, coloca cualquiera)
 - streamlit run interface/streamlit_app.py
 
 ## Estructura
