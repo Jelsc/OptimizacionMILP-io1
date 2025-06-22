@@ -19,7 +19,7 @@ Este proyecto utiliza **Programación Lineal Entera Mixta (MILP)** para asignar 
 ## 5. Crear la base de datos
 - python crear_base.py
 
-## 6. Ejecuta la aplicacion
+## 6. Ejecuta la aplicacion (te pedira un correo, coloca cualquiera)
 - streamlit run interface/streamlit_app.py
 
 ## Estructura
