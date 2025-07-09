@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    # Construye la imagen a partir del Dockerfile de tu repo
+    build:
+      context: .            # raíz del proyecto
+      dockerfile: Dockerfile
+    container_name: milp_streamlit
+
+    # ─ Puertos ────────────────
+    # • 80:8501  → la app será accesible en http://TU_IP
+    #   (cambia el 80 por otro si ya lo usas o quieres otro puerto externo)
+    ports:
+      - "80:8501"
+
+    # ─ Volúmenes ──────────────
+    # Monta sólo la carpeta de la base de datos para que `aulas.db`
+    # sobreviva a reinicios o nuevas builds.
+    # Ajusta la ruta host (/opt/aulas_db) a donde prefieras guardar el archivo.
+    volumes:
+      - /opt/aulas_db:/app/database
+
+    # Reinicia automáticamente salvo que lo detengas a mano
+    restart: unless-stopped

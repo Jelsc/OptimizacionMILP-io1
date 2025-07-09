@@ -148,13 +148,16 @@ if st.button("Optimizar"):
     # Crear los diccionarios de grupos y horarios
     gr_d = {g["id"]: g["materia"] for g in get_grupos()}
     hr_d = {h["id"]: {"bloque": h["bloque"], "hora": h["hora"]} for h in get_horarios()}
+    au_d = {a["id"]: {"nombre": a["nombre"], "piso": a["piso"]} for a in get_aulas()}
 
     # --- DataFrame final --- (con nombres de grupo y horario)
     asignaciones = []
     for res in resultado:
+        aula_info = au_d[res["aula"]]
         asignaciones.append({
             "Materia": gr_d[res["grupo_id"]],   # Usamos el diccionario para acceder al nombre del grupo
-            "Aula": res["aula"],
+            "Aula": aula_info["nombre"],  # Nombre del aula
+            "Piso": aula_info["piso"],  # Piso del aula
             "Bloque": hr_d[res["horario_id"]]["bloque"],  # Usamos diccionario para el bloque
             "Horario": hr_d[res["horario_id"]]["hora"],  # Usamos diccionario para la hora
             "Vacantes": res["vacantes"]
